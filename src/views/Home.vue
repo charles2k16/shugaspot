@@ -1,47 +1,23 @@
 <template>
   <div class="home">
     <v-row justify="space-between" no-gutters>
-      <v-col cols="12" sm="6" md="3" xs="12">
+      <v-col
+        cols="12"
+        sm="6"
+        md="3"
+        xs="6"
+        v-for="post in recentPost"
+        :key="post.id"
+      >
         <v-card outlined>
           <v-img
             class="white--text align-end"
             height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            src="../assets/images/t5.jpg"
           >
-            <v-card-title>Top 10 Australian beaches</v-card-title>
-          </v-img>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3">
-        <v-card outlined>
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          >
-            <v-card-title>Top 10 Australian beaches</v-card-title>
-          </v-img>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3">
-        <v-card outlined>
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          >
-            <v-card-title>Top 10 Australian beaches</v-card-title>
-          </v-img>
-        </v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="3">
-        <v-card outlined>
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-          >
-            <v-card-title>Top 10 Australian beaches</v-card-title>
+            <v-card-title class="head-post-title">{{
+              post.title
+            }}</v-card-title>
           </v-img>
         </v-card>
       </v-col>
@@ -78,7 +54,7 @@
       </v-card>
     </div> -->
     <div style="text-align:center;" class="mt-5">
-      <img src="../assets/adds.jpg" alt="" />
+      <img src="../assets/adds.jpg" alt="adds" width="100%" />
     </div>
     <div>
       <v-container>
@@ -127,7 +103,12 @@
             </v-card>
           </v-col>
           <v-col cols="12" sm="6" md="4" xs="12">
-            <img src="../assets/filmad.jpg" alt="ads" height="400px;" />
+            <img
+              src="../assets/filmad.jpg"
+              alt="ads"
+              height="400px;"
+              width="100%"
+            />
           </v-col>
         </v-row>
       </v-container>
@@ -282,5 +263,35 @@
 <script>
 export default {
   name: 'Home',
+  data() {
+    return {
+      recentPost: [
+        {
+          id: 1,
+          image:
+            'https://www.blackfilm.com/read/2020/09/netflix-now-streaming-all-8-seasons-of-girlfriends/',
+          title: 'Netflix Now Streaming All 8 Seasons of Girlfriends',
+        },
+        {
+          id: 2,
+          image:
+            'https://www.blackfilm.com/read/2020/09/nickelodeon-pulls-their-newest-nick-jr-show-made-by-maddie-amid-hair-love-controversy/',
+          title: 'Ghana must go storms Accra Siver Bird Cinemas',
+        },
+        {
+          id: 3,
+          image:
+            'https://www.blackfilm.com/read/2020/09/nickelodeon-pulls-their-newest-nick-jr-show-made-by-maddie-amid-hair-love-controversy/',
+          title: 'Majid Michel inspires in new movie Comic City',
+        },
+        {
+          id: 4,
+          image:
+            'https://www.blackfilm.com/read/2020/09/nickelodeon-pulls-their-newest-nick-jr-show-made-by-maddie-amid-hair-love-controversy/',
+          title: 'Meet the new MTN abassador in kumahood',
+        },
+      ],
+    };
+  },
 };
 </script>
